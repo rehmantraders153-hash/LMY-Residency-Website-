@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LMY Residency - Premium Luxury Apartments</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -13,33 +12,33 @@
         }
 
         :root {
-            --primary: #d4af6e;
+            --gold: #d4af6e;
             --dark: #1a1a2e;
             --light: #f5f5f5;
-            --accent: #667eea;
+            --blue: #667eea;
+            --purple: #764ba2;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            overflow-x: hidden;
         }
 
-        /* ===== HEADER ===== */
+        /* HEADER */
         header {
             background: rgba(26, 26, 46, 0.98);
             color: white;
-            padding: 1rem 0;
+            padding: 1.2rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
             backdrop-filter: blur(10px);
         }
 
-        .header-content {
+        nav {
             max-width: 1400px;
             margin: 0 auto;
             display: flex;
@@ -49,65 +48,64 @@
         }
 
         .logo {
-            font-size: 28px;
+            font-size: 26px;
             font-weight: 700;
             letter-spacing: 3px;
         }
 
         .logo span {
-            color: var(--primary);
+            color: var(--gold);
         }
 
-        nav {
+        .nav-menu {
             display: flex;
             gap: 40px;
-            align-items: center;
+            list-style: none;
         }
 
-        nav a {
+        .nav-menu a {
             color: white;
             text-decoration: none;
-            transition: 0.3s;
             text-transform: uppercase;
-            font-size: 13px;
-            letter-spacing: 1px;
+            font-size: 12px;
+            letter-spacing: 1.5px;
             font-weight: 500;
+            transition: 0.3s;
         }
 
-        nav a:hover {
-            color: var(--primary);
+        .nav-menu a:hover {
+            color: var(--gold);
         }
 
-        .auth-buttons {
+        .nav-buttons {
             display: flex;
-            gap: 15px;
+            gap: 12px;
         }
 
-        .btn-login, .btn-signup {
-            padding: 10px 25px;
+        .btn-auth {
+            padding: 9px 22px;
             border-radius: 5px;
             cursor: pointer;
             border: none;
             font-weight: 600;
+            text-transform: uppercase;
+            font-size: 12px;
             transition: 0.3s;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 13px;
         }
 
         .btn-login {
             background: transparent;
             color: white;
-            border: 2px solid var(--primary);
+            border: 2px solid var(--gold);
         }
 
         .btn-login:hover {
-            background: var(--primary);
+            background: var(--gold);
             color: var(--dark);
         }
 
         .btn-signup {
-            background: var(--primary);
+            background: var(--gold);
             color: var(--dark);
         }
 
@@ -115,12 +113,12 @@
             background: #f0d584;
         }
 
-        /* ===== HERO SECTION ===== */
+        /* HERO */
         .hero {
             margin-top: 70px;
             height: 700px;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.7) 0%, rgba(118, 75, 162, 0.7) 100%), 
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="%23fff" opacity="0.1"/></pattern></defs><rect width="1200" height="700" fill="%23667eea"/><rect width="1200" height="700" fill="url(%23dots)"/></svg>');
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.75) 0%, rgba(118, 75, 162, 0.75) 100%), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700"><defs><pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 50" fill="none" stroke="%23fff" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="1200" height="700" fill="%23667eea"/><rect width="1200" height="700" fill="url(%23grid)"/></svg>');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -139,47 +137,48 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 30% 50%, rgba(212, 175, 110, 0.15) 0%, transparent 50%),
-                        radial-gradient(circle at 70% 80%, rgba(212, 175, 110, 0.1) 0%, transparent 50%);
-            z-index: 1;
+            background: radial-gradient(circle at 30% 50%, rgba(212, 175, 110, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(212, 175, 110, 0.08) 0%, transparent 50%);
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 800px;
+            max-width: 900px;
             animation: fadeInUp 1s ease-out;
         }
 
         .hero h1 {
-            font-size: 3.5em;
+            font-size: 3.8em;
             margin-bottom: 20px;
             font-weight: 300;
             letter-spacing: 2px;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+            text-shadow: 3px 3px 8px rgba(0,0,0,0.4);
+            line-height: 1.2;
         }
 
         .hero p {
-            font-size: 1.3em;
-            margin-bottom: 40px;
-            color: var(--primary);
+            font-size: 1.4em;
+            margin-bottom: 50px;
+            color: var(--gold);
             font-weight: 300;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
         }
 
         .hero-buttons {
             display: flex;
-            gap: 20px;
+            gap: 25px;
             justify-content: center;
             flex-wrap: wrap;
         }
 
-        .btn-book, .btn-explore {
-            padding: 18px 50px;
+        .btn-cta {
+            padding: 16px 45px;
             border-radius: 50px;
             cursor: pointer;
             border: none;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -189,13 +188,13 @@
         }
 
         .btn-book {
-            background: var(--primary);
+            background: var(--gold);
             color: var(--dark);
         }
 
         .btn-book:hover {
             background: #f0d584;
-            transform: translateY(-3px);
+            transform: translateY(-4px);
             box-shadow: 0 15px 40px rgba(212, 175, 110, 0.4);
         }
 
@@ -207,118 +206,130 @@
 
         .btn-explore:hover {
             background: white;
-            color: var(--accent);
-            transform: translateY(-3px);
+            color: var(--blue);
+            transform: translateY(-4px);
         }
 
-        /* ===== SEARCH BOX ===== */
-        .search-box {
-            position: absolute;
-            bottom: -40px;
-            left: 50%;
-            transform: translateX(-50%);
+        /* SEARCH BOX */
+        .search-section {
+            position: relative;
+            height: 100px;
             background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-            width: 90%;
-            max-width: 900px;
-            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 30px;
         }
 
-        .search-box form {
+        .search-box {
+            background: white;
+            padding: 25px 30px;
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            width: 100%;
+            max-width: 1000px;
+            position: relative;
+            top: -50px;
+        }
+
+        .search-form {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 15px;
         }
 
-        .search-box input, .search-box select {
+        .search-form input,
+        .search-form select {
             padding: 12px 15px;
             border: 2px solid #eee;
-            border-radius: 5px;
+            border-radius: 6px;
             font-size: 14px;
             transition: 0.3s;
+            font-family: inherit;
         }
 
-        .search-box input:focus, .search-box select:focus {
+        .search-form input:focus,
+        .search-form select:focus {
             outline: none;
-            border-color: var(--primary);
+            border-color: var(--gold);
             background: #fafafa;
         }
 
-        .search-box button {
-            background: var(--primary);
+        .search-form button {
+            background: linear-gradient(135deg, var(--gold) 0%, #c9a04f 100%);
             color: var(--dark);
             padding: 12px 30px;
             border: none;
-            border-radius: 5px;
+            border-radius: 6px;
             cursor: pointer;
             font-weight: 700;
             text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
             transition: 0.3s;
         }
 
-        .search-box button:hover {
-            background: #f0d584;
+        .search-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 175, 110, 0.3);
         }
 
-        /* ===== PROPERTIES SECTION ===== */
-        .properties-section {
-            padding: 100px 30px;
+        /* PROPERTIES */
+        .properties {
+            padding: 80px 30px;
             max-width: 1400px;
             margin: 0 auto;
         }
 
-        .section-header {
+        .section-title {
             text-align: center;
             margin-bottom: 70px;
         }
 
-        .section-header h2 {
+        .section-title h2 {
             font-size: 2.8em;
             color: var(--dark);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             font-weight: 600;
             letter-spacing: 1px;
         }
 
-        .section-header p {
+        .section-title p {
             font-size: 1.1em;
             color: #666;
             max-width: 600px;
             margin: 0 auto;
         }
 
-        .properties-grid {
+        .property-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 40px;
-            margin-bottom: 50px;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 35px;
         }
 
         .property-card {
             background: white;
-            border-radius: 15px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
             position: relative;
         }
 
         .property-card:hover {
-            transform: translateY(-15px);
+            transform: translateY(-12px);
             box-shadow: 0 20px 50px rgba(0,0,0,0.15);
         }
 
         .property-image {
             width: 100%;
-            height: 280px;
-            background: linear-gradient(135deg, var(--accent) 0%, #764ba2 100%);
+            height: 260px;
+            background: linear-gradient(135deg, var(--blue) 0%, var(--purple) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 80px;
+            font-size: 90px;
             position: relative;
             overflow: hidden;
         }
@@ -330,31 +341,32 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
         }
 
         .property-badge {
             position: absolute;
             top: 15px;
             right: 15px;
-            background: var(--primary);
+            background: var(--gold);
             color: var(--dark);
-            padding: 8px 15px;
+            padding: 8px 16px;
             border-radius: 50px;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.2px;
+            z-index: 10;
         }
 
-        .property-info {
-            padding: 30px;
+        .property-details {
+            padding: 28px;
         }
 
-        .property-title {
-            font-size: 1.4em;
+        .property-name {
+            font-size: 1.3em;
             color: var(--dark);
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             font-weight: 700;
         }
 
@@ -364,74 +376,82 @@
             margin-bottom: 15px;
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 6px;
         }
 
-        .property-description {
+        .property-desc {
             color: #666;
-            font-size: 0.9em;
-            margin-bottom: 20px;
+            font-size: 0.95em;
+            margin-bottom: 18px;
             line-height: 1.6;
         }
 
         .property-features {
             display: flex;
-            gap: 15px;
-            margin-bottom: 20px;
+            gap: 12px;
+            margin-bottom: 22px;
             font-size: 0.85em;
             color: #777;
+            flex-wrap: wrap;
         }
 
-        .feature {
-            display: flex;
-            align-items: center;
-            gap: 5px;
+        .feature-tag {
+            background: #f5f5f5;
+            padding: 6px 12px;
+            border-radius: 20px;
         }
 
-        .property-footer {
+        .property-bottom {
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-top: 2px solid #f0f0f0;
-            padding-top: 20px;
+            padding-top: 18px;
         }
 
-        .price {
-            font-size: 1.6em;
-            color: var(--primary);
-            font-weight: 700;
+        .price-box {
+            display: flex;
+            flex-direction: column;
         }
 
         .price-label {
             font-size: 0.8em;
             color: #999;
-            display: block;
+            margin-bottom: 2px;
         }
 
-        .btn-details {
-            background: var(--accent);
+        .price {
+            font-size: 1.6em;
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        .btn-view {
+            background: linear-gradient(135deg, var(--blue) 0%, var(--purple) 100%);
             color: white;
-            padding: 10px 20px;
+            padding: 10px 22px;
             border: none;
-            border-radius: 5px;
+            border-radius: 6px;
             cursor: pointer;
             font-weight: 600;
             text-transform: uppercase;
             font-size: 12px;
+            letter-spacing: 1px;
             transition: 0.3s;
         }
 
-        .btn-details:hover {
-            background: #764ba2;
+        .btn-view:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
         }
 
-        /* ===== FEATURES SECTION ===== */
-        .features-section {
+        /* WHY CHOOSE */
+        .why-choose {
             background: #f9f9f9;
-            padding: 100px 30px;
+            padding: 80px 30px;
         }
 
-        .features-container {
+        .why-choose-container {
             max-width: 1400px;
             margin: 0 auto;
         }
@@ -440,39 +460,49 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 40px;
-            margin-top: 50px;
+            margin-top: 60px;
         }
 
-        .feature-card {
+        .feature-item {
             text-align: center;
             padding: 40px 30px;
+            background: white;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .feature-item:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
         }
 
         .feature-icon {
-            font-size: 3em;
+            font-size: 3.5em;
             margin-bottom: 20px;
+            display: inline-block;
         }
 
-        .feature-card h3 {
+        .feature-item h3 {
             font-size: 1.3em;
             color: var(--dark);
             margin-bottom: 15px;
             font-weight: 700;
         }
 
-        .feature-card p {
+        .feature-item p {
             color: #666;
             line-height: 1.8;
+            font-size: 0.95em;
         }
 
-        /* ===== FOOTER ===== */
+        /* FOOTER */
         footer {
             background: var(--dark);
             color: white;
             padding: 60px 30px 30px;
         }
 
-        .footer-content {
+        .footer-grid {
             max-width: 1400px;
             margin: 0 auto;
             display: grid;
@@ -481,41 +511,44 @@
             margin-bottom: 40px;
         }
 
-        .footer-section h4 {
-            color: var(--primary);
+        .footer-col h4 {
+            color: var(--gold);
             margin-bottom: 20px;
-            font-size: 1.1em;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            font-size: 0.95em;
+            letter-spacing: 1.5px;
         }
 
-        .footer-section ul {
+        .footer-col ul {
             list-style: none;
         }
 
-        .footer-section ul li {
-            margin-bottom: 10px;
+        .footer-col ul li {
+            margin-bottom: 12px;
         }
 
-        .footer-section a {
-            color: #ccc;
+        .footer-col a {
+            color: #bbb;
             text-decoration: none;
             transition: 0.3s;
             font-size: 0.95em;
         }
 
-        .footer-section a:hover {
-            color: var(--primary);
+        .footer-col a:hover {
+            color: var(--gold);
         }
 
         .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
             border-top: 1px solid #444;
             padding-top: 30px;
             text-align: center;
-            color: #999;
+            color: #888;
+            font-size: 0.9em;
         }
 
-        /* ===== MODAL ===== */
+        /* MODALS */
         .modal {
             display: none;
             position: fixed;
@@ -540,7 +573,7 @@
             animation: slideDown 0.3s;
         }
 
-        .close-modal {
+        .close {
             color: #aaa;
             float: right;
             font-size: 28px;
@@ -549,7 +582,7 @@
             transition: 0.3s;
         }
 
-        .close-modal:hover {
+        .close:hover {
             color: #000;
         }
 
@@ -557,6 +590,7 @@
             color: var(--dark);
             margin-bottom: 30px;
             font-size: 1.8em;
+            font-weight: 700;
         }
 
         .form-group {
@@ -568,46 +602,52 @@
             margin-bottom: 8px;
             color: var(--dark);
             font-weight: 600;
+            font-size: 0.95em;
         }
 
-        .form-group input, .form-group select {
+        .form-group input,
+        .form-group select {
             width: 100%;
             padding: 12px;
             border: 2px solid #eee;
             border-radius: 8px;
             font-size: 1em;
             transition: 0.3s;
+            font-family: inherit;
         }
 
-        .form-group input:focus, .form-group select:focus {
+        .form-group input:focus,
+        .form-group select:focus {
             outline: none;
-            border-color: var(--primary);
+            border-color: var(--gold);
             background: #fafafa;
         }
 
         .form-submit {
             width: 100%;
             padding: 12px;
-            background: var(--primary);
+            background: linear-gradient(135deg, var(--gold) 0%, #c9a04f 100%);
             color: var(--dark);
             border: none;
             border-radius: 8px;
             font-weight: 700;
             cursor: pointer;
             text-transform: uppercase;
+            letter-spacing: 1px;
             margin-top: 20px;
             transition: 0.3s;
         }
 
         .form-submit:hover {
-            background: #f0d584;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 175, 110, 0.3);
         }
 
-        /* ===== ANIMATIONS ===== */
+        /* ANIMATIONS */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(40px);
             }
             to {
                 opacity: 1;
@@ -631,72 +671,57 @@
             }
         }
 
-        /* ===== RESPONSIVE ===== */
+        /* RESPONSIVE */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.2em;
-            }
-
-            .hero p {
-                font-size: 1em;
-            }
-
-            nav {
-                gap: 20px;
-                font-size: 0.85em;
-            }
-
-            .properties-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .search-box form {
-                grid-template-columns: 1fr;
-            }
-
-            .section-header h2 {
-                font-size: 2em;
-            }
+            .hero h1 { font-size: 2.2em; }
+            .hero p { font-size: 1.1em; }
+            .nav-menu { gap: 20px; }
+            .property-grid { grid-template-columns: 1fr; }
+            .search-form { grid-template-columns: 1fr; }
+            .section-title h2 { font-size: 2em; }
+            .hero-buttons { gap: 15px; }
         }
     </style>
 </head>
 <body>
     <!-- HEADER -->
     <header>
-        <div class="header-content">
+        <nav>
             <div class="logo">LMY<span>.</span></div>
-            <nav>
-                <a href="#home">Home</a>
-                <a href="#properties">Properties</a>
-                <a href="#how-it-works">How It Works</a>
-                <a href="#contact">Contact</a>
-            </nav>
-            <div class="auth-buttons">
-                <button class="btn-login" onclick="openLoginModal()">Login</button>
-                <button class="btn-signup" onclick="openSignupModal()">Sign Up</button>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#properties">Properties</a></li>
+                <li><a href="#why">Why LMY</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <button class="btn-auth btn-login" onclick="openLogin()">Login</button>
+                <button class="btn-auth btn-signup" onclick="openSignup()">Sign Up</button>
             </div>
-        </div>
+        </nav>
     </header>
 
-    <!-- HERO SECTION -->
+    <!-- HERO -->
     <section class="hero" id="home">
         <div class="hero-content">
             <h1>Find Your Luxury Home</h1>
-            <p>Discover premium serviced apartments across Asia</p>
+            <p>Premium serviced apartments across Asia</p>
             <div class="hero-buttons">
-                <button class="btn-book" onclick="openBookingModal()">Book Your Stay</button>
-                <button class="btn-explore" onclick="document.getElementById('properties').scrollIntoView({behavior:'smooth'})">Explore Properties</button>
+                <button class="btn-cta btn-book" onclick="openBooking()">Book Your Stay</button>
+                <button class="btn-cta btn-explore" onclick="document.getElementById('properties').scrollIntoView({behavior:'smooth'})">Explore</button>
             </div>
         </div>
+    </section>
 
-        <!-- SEARCH BOX -->
+    <!-- SEARCH -->
+    <div class="search-section">
         <div class="search-box">
-            <form onsubmit="handleSearch(event)">
+            <form class="search-form" onsubmit="handleSearch(event)">
                 <input type="date" placeholder="Check-in" required>
                 <input type="date" placeholder="Check-out" required>
                 <input type="number" placeholder="Guests" min="1" value="1" required>
                 <select required>
-                    <option value="">Select Location</option>
+                    <option value="">Location</option>
                     <option value="islamabad">Islamabad</option>
                     <option value="lahore">Lahore</option>
                     <option value="dubai">Dubai</option>
@@ -705,66 +730,66 @@
                 <button type="submit">Search</button>
             </form>
         </div>
-    </section>
+    </div>
 
-    <!-- PROPERTIES SECTION -->
-    <section class="properties-section" id="properties" style="margin-top: 60px;">
-        <div class="section-header">
+    <!-- PROPERTIES -->
+    <section class="properties" id="properties">
+        <div class="section-title">
             <h2>Featured Properties</h2>
-            <p>Hand-picked luxury apartments perfect for your next stay</p>
+            <p>Hand-picked luxury apartments for your perfect stay</p>
         </div>
-        <div class="properties-grid" id="propertiesGrid"></div>
+        <div class="property-grid" id="propertyList"></div>
     </section>
 
-    <!-- FEATURES SECTION -->
-    <section class="features-section" id="how-it-works">
-        <div class="features-container">
-            <div class="section-header">
+    <!-- WHY CHOOSE -->
+    <section class="why-choose" id="why">
+        <div class="why-choose-container">
+            <div class="section-title">
                 <h2>Why Choose LMY?</h2>
-                <p>Experience luxury living like never before</p>
+                <p>Experience luxury living redefined</p>
             </div>
             <div class="features-grid">
-                <div class="feature-card">
+                <div class="feature-item">
                     <div class="feature-icon">🏆</div>
                     <h3>Premium Quality</h3>
-                    <p>All our properties are carefully curated and maintained to the highest standards</p>
+                    <p>Carefully curated properties maintained to highest standards</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-item">
                     <div class="feature-icon">🔒</div>
                     <h3>Safe & Secure</h3>
-                    <p>Advanced security features and 24/7 support for your peace of mind</p>
+                    <p>Advanced security with 24/7 support for your peace of mind</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💼</div>
-                    <h3>Professional Service</h3>
-                    <p>Expert team ready to assist you with all your accommodation needs</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🌟</div>
+                <div class="feature-item">
+                    <div class="feature-icon">⭐</div>
                     <h3>Best Prices</h3>
                     <p>Competitive rates with exclusive deals and loyalty rewards</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">💼</div>
+                    <h3>Expert Service</h3>
+                    <p>Professional team ready to assist with all your needs</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-col">
                 <h4>About LMY</h4>
-                <p>Premium luxury apartments across Asia. Your comfort, our priority.</p>
+                <p>Premium luxury apartments across Asia. Your comfort is our priority.</p>
             </div>
-            <div class="footer-section">
+            <div class="footer-col">
                 <h4>Quick Links</h4>
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#properties">Properties</a></li>
-                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#why">Why Us</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
-            <div class="footer-section">
+            <div class="footer-col">
                 <h4>Support</h4>
                 <ul>
                     <li><a href="#">Help Center</a></li>
@@ -773,8 +798,8 @@
                     <li><a href="#">FAQ</a></li>
                 </ul>
             </div>
-            <div class="footer-section">
-                <h4>Contact</h4>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
                 <ul>
                     <li><a href="tel:+923001234567">+92 300 123 4567</a></li>
                     <li><a href="mailto:info@lmy.com">info@lmy.com</a></li>
@@ -783,18 +808,18 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 LMY Residency. All rights reserved. | <a href="#" style="color: var(--primary);">Terms</a> | <a href="#" style="color: var(--primary);">Privacy</a></p>
+            <p>&copy; 2024 LMY Residency. All rights reserved. | <a href="#" style="color: var(--gold);">Terms</a> | <a href="#" style="color: var(--gold);">Privacy</a></p>
         </div>
     </footer>
 
     <!-- LOGIN MODAL -->
     <div id="loginModal" class="modal">
         <div class="modal-content">
-            <span class="close-modal" onclick="closeLoginModal()">&times;</span>
+            <span class="close" onclick="closeLogin()">&times;</span>
             <h2>Guest Login</h2>
             <form onsubmit="handleLogin(event)">
                 <div class="form-group">
-                    <label>Email</label>
+                    <label>Email Address</label>
                     <input type="email" placeholder="your@email.com" required>
                 </div>
                 <div class="form-group">
@@ -804,7 +829,7 @@
                 <button type="submit" class="form-submit">Sign In</button>
             </form>
             <p style="text-align: center; margin-top: 20px; color: #666;">
-                Don't have an account? <a href="#" onclick="closeLoginModal(); openSignupModal();" style="color: var(--primary);">Sign up</a>
+                Don't have account? <a href="#" onclick="closeLogin(); openSignup();" style="color: var(--gold);">Sign up</a>
             </p>
         </div>
     </div>
@@ -812,7 +837,7 @@
     <!-- SIGNUP MODAL -->
     <div id="signupModal" class="modal">
         <div class="modal-content">
-            <span class="close-modal" onclick="closeSignupModal()">&times;</span>
+            <span class="close" onclick="closeSignup()">&times;</span>
             <h2>Create Account</h2>
             <form onsubmit="handleSignup(event)">
                 <div class="form-group">
@@ -824,12 +849,12 @@
                     <input type="email" placeholder="your@email.com" required>
                 </div>
                 <div class="form-group">
-                    <label>Password</label>
-                    <input type="password" placeholder="••••••••" required>
-                </div>
-                <div class="form-group">
                     <label>Phone</label>
                     <input type="tel" placeholder="+92 300 1234567" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="••••••••" required>
                 </div>
                 <button type="submit" class="form-submit">Create Account</button>
             </form>
@@ -839,7 +864,7 @@
     <!-- BOOKING MODAL -->
     <div id="bookingModal" class="modal">
         <div class="modal-content">
-            <span class="close-modal" onclick="closeBookingModal()">&times;</span>
+            <span class="close" onclick="closeBooking()">&times;</span>
             <h2>Book Your Stay</h2>
             <form onsubmit="handleBooking(event)">
                 <div class="form-group">
@@ -855,9 +880,9 @@
                     <input type="number" min="1" value="1" required>
                 </div>
                 <div class="form-group">
-                    <label>Select Location</label>
+                    <label>Location</label>
                     <select required>
-                        <option value="">Choose location</option>
+                        <option value="">Select location</option>
                         <option value="islamabad">Islamabad</option>
                         <option value="lahore">Lahore</option>
                         <option value="dubai">Dubai</option>
@@ -870,110 +895,57 @@
     </div>
 
     <script>
-        // Properties Data
         const properties = [
-            {
-                name: "Elysium Tower",
-                location: "Islamabad, Pakistan",
-                price: 8500,
-                description: "Modern studio with panoramic city views",
-                features: "2 Guests • Studio • WiFi",
-                emoji: "🏢"
-            },
-            {
-                name: "Gold Crest DHA",
-                location: "Lahore, Pakistan",
-                price: 11000,
-                description: "Luxurious one-bedroom in exclusive DHA",
-                features: "4 Guests • 1 BHK • Gym",
-                emoji: "🏠"
-            },
-            {
-                name: "Princess Tower",
-                location: "Dubai, UAE",
-                price: 450,
-                description: "Beachfront studio with marina view",
-                features: "2 Guests • Studio • Beach",
-                emoji: "🏬"
-            },
-            {
-                name: "Indigo Gulberg",
-                location: "Lahore, Pakistan",
-                price: 8000,
-                description: "Contemporary apartment in heart of city",
-                features: "3 Guests • 1 BHK • Modern",
-                emoji: "🏘️"
-            },
-            {
-                name: "Mountain Retreat",
-                location: "Murree, Pakistan",
-                price: 6500,
-                description: "Cozy mountain escape with valley views",
-                features: "3 Guests • 1 BHK • Nature",
-                emoji: "🏔️"
-            },
-            {
-                name: "JBR Beachfront",
-                location: "Dubai, UAE",
-                price: 650,
-                description: "Premium beachfront living experience",
-                features: "2 Guests • Studio • Premium",
-                emoji: "🏖️"
-            }
+            { name: "Elysium Tower", location: "Islamabad", price: 8500, desc: "Modern studio with city views", features: "2 Guests • Studio • WiFi", emoji: "🏢" },
+            { name: "Gold Crest DHA", location: "Lahore", price: 11000, desc: "Luxurious 1-bedroom in DHA", features: "4 Guests • 1BHK • Gym", emoji: "🏠" },
+            { name: "Princess Tower", location: "Dubai", price: 450, desc: "Beachfront studio", features: "2 Guests • Studio • Beach", emoji: "🏬" },
+            { name: "Indigo Gulberg", location: "Lahore", price: 8000, desc: "Contemporary apartment", features: "3 Guests • 1BHK • Modern", emoji: "🏘️" },
+            { name: "Mountain Retreat", location: "Murree", price: 6500, desc: "Mountain escape with views", features: "3 Guests • 1BHK • Nature", emoji: "🏔️" },
+            { name: "JBR Beachfront", location: "Dubai", price: 650, desc: "Premium beachfront living", features: "2 Guests • Studio • Premium", emoji: "🏖️" }
         ];
 
-        // Load Properties
         window.addEventListener('load', () => {
-            const grid = document.getElementById('propertiesGrid');
-            grid.innerHTML = properties.map((prop, idx) => `
+            document.getElementById('propertyList').innerHTML = properties.map(p => `
                 <div class="property-card">
                     <div class="property-image">
-                        ${prop.emoji}
+                        ${p.emoji}
                         <span class="property-badge">Featured</span>
                     </div>
-                    <div class="property-info">
-                        <h3 class="property-title">${prop.name}</h3>
-                        <div class="property-location">
-                            📍 ${prop.location}
-                        </div>
-                        <p class="property-description">${prop.description}</p>
+                    <div class="property-details">
+                        <h3 class="property-name">${p.name}</h3>
+                        <div class="property-location">📍 ${p.location}, Pakistan</div>
+                        <p class="property-desc">${p.desc}</p>
                         <div class="property-features">
-                            <span class="feature">${prop.features}</span>
+                            <span class="feature-tag">${p.features}</span>
                         </div>
-                        <div class="property-footer">
-                            <div>
-                                <span class="price-label">Starting from</span>
-                                <span class="price">Rs ${prop.price.toLocaleString()}</span>
+                        <div class="property-bottom">
+                            <div class="price-box">
+                                <span class="price-label">From</span>
+                                <span class="price">Rs ${p.price.toLocaleString()}</span>
                             </div>
-                            <button class="btn-details" onclick="openBookingModal()">View Details</button>
+                            <button class="btn-view" onclick="openBooking()">View Details</button>
                         </div>
                     </div>
                 </div>
             `).join('');
         });
 
-        // Modal Functions
-        function openLoginModal() { document.getElementById('loginModal').style.display = 'block'; }
-        function closeLoginModal() { document.getElementById('loginModal').style.display = 'none'; }
-        function openSignupModal() { document.getElementById('signupModal').style.display = 'block'; }
-        function closeSignupModal() { document.getElementById('signupModal').style.display = 'none'; }
-        function openBookingModal() { document.getElementById('bookingModal').style.display = 'block'; }
-        function closeBookingModal() { document.getElementById('bookingModal').style.display = 'none'; }
+        function openLogin() { document.getElementById('loginModal').style.display = 'block'; }
+        function closeLogin() { document.getElementById('loginModal').style.display = 'none'; }
+        function openSignup() { document.getElementById('signupModal').style.display = 'block'; }
+        function closeSignup() { document.getElementById('signupModal').style.display = 'none'; }
+        function openBooking() { document.getElementById('bookingModal').style.display = 'block'; }
+        function closeBooking() { document.getElementById('bookingModal').style.display = 'none'; }
 
-        // Form Handlers
-        function handleLogin(e) { e.preventDefault(); alert('✅ Login Successful!'); closeLoginModal(); }
-        function handleSignup(e) { e.preventDefault(); alert('✅ Account Created!'); closeSignupModal(); }
-        function handleBooking(e) { e.preventDefault(); alert('✅ Booking Request Sent!'); closeBookingModal(); }
-        function handleSearch(e) { e.preventDefault(); alert('✅ Searching properties...'); }
+        function handleLogin(e) { e.preventDefault(); alert('✅ Login Successful!'); closeLogin(); }
+        function handleSignup(e) { e.preventDefault(); alert('✅ Account Created!'); closeSignup(); }
+        function handleBooking(e) { e.preventDefault(); alert('✅ Booking Request Sent!'); closeBooking(); }
+        function handleSearch(e) { e.preventDefault(); alert('✅ Searching Properties...'); }
 
-        // Close modal on outside click
         window.onclick = (e) => {
-            const login = document.getElementById('loginModal');
-            const signup = document.getElementById('signupModal');
-            const booking = document.getElementById('bookingModal');
-            if (e.target == login) login.style.display = 'none';
-            if (e.target == signup) signup.style.display = 'none';
-            if (e.target == booking) booking.style.display = 'none';
+            if (e.target.id === 'loginModal') closeLogin();
+            if (e.target.id === 'signupModal') closeSignup();
+            if (e.target.id === 'bookingModal') closeBooking();
         };
     </script>
 </body>

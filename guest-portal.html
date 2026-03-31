@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Guest Portal</title>
+    <style>
+        body { font-family: Arial; margin: 0; padding: 0; background: #f5f5f5; }
+        .sidebar { width: 250px; height: 100vh; background: #1a1a2e; color: white; padding: 20px; position: fixed; }
+        .sidebar h2 { color: #d4af6e; margin-bottom: 30px; }
+        .sidebar a { display: block; color: white; padding: 12px; margin: 10px 0; border-radius: 5px; cursor: pointer; }
+        .sidebar a:hover { background: #d4af6e; color: #1a1a2e; }
+        .main { margin-left: 250px; padding: 30px; }
+        .card { background: white; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .card h3 { color: #d4af6e; }
+        .form-group { margin: 10px 0; }
+        .form-group label { display: block; margin: 5px 0; font-weight: bold; }
+        .form-group input { width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 5px; }
+        .btn { padding: 10px 20px; background: #d4af6e; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Guest Portal</h2>
+        <a onclick="showTab('dashboard')">📊 Dashboard</a>
+        <a onclick="showTab('bookings')">📅 My Bookings</a>
+        <a onclick="showTab('payments')">💳 Payments</a>
+        <a onclick="showTab('precheckin')">✅ Pre Check-in</a>
+        <a onclick="logout()" style="margin-top: 30px;">🚪 Logout</a>
+    </div>
+
+    <div class="main">
+        <h1 id="userName">Welcome, Guest!</h1>
+
+        <div id="dashboard" class="tab">
+            <h2>Dashboard</h2>
+            <div class="card">
+                <h3>Upcoming Stay - 5 Days</h3>
+                <p>Check-in: January 25, 2024</p>
+                <p>Status: ✅ Confirmed</p>
+            </div>
+        </div>
+
+        <div id="bookings" class="tab" style="display:none;">
+            <h2>Your Booking</h2>
+            <div class="card">
+                <p><strong>Property:</strong> Elysium Tower</p>
+                <p><strong>Dates:</strong> Jan 25 - Jan 28, 2024</p>
+                <p><strong>Guests:</strong> 2 Adults, 1 Child</p>
+            </div>
+        </div>
+
+        <div id="payments" class="tab" style="display:none;">
+            <h2>Payments</h2>
+            <div class="card">
+                <p><strong>Total:</strong> Rs 29,325</p>
+                <p><strong>Paid:</strong> Rs 0</p>
+                <p><strong>Pending:</strong> Rs 29,325</p>
+                <button class="btn">💰 Pay Now</button>
+            </div>
+        </div>
+
+        <div id="precheckin" class="tab" style="display:none;">
+            <h2>Pre Check-in</h2>
+            <div class="card">
+                <div class="form-group">
+                    <label>ID Number:</label>
+                    <input type="text" placeholder="Your ID">
+                </div>
+                <div class="form-group">
+                    <label>Arrival Time:</label>
+                    <input type="time" value="14:00">
+                </div>
+                <button class="btn">✅ Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabName) {
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(t => t.style.display = 'none');
+            document.getElementById(tabName).style.display = 'block';
+        }
+
+        function logout() {
+            window.location.href = 'index.html';
+        }
+
+        const user = localStorage.getItem('loggedInUser');
+        if (user) {
+            document.getElementById('userName').textContent = 'Welcome, ' + user + '!';
+        }
+    </script>
+</body>
+</html>
